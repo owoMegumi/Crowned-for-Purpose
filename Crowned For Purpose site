@@ -128,7 +128,7 @@
       <!-- Brand Logo -->
       <a href="#home" class="flex items-center gap-2 sm:gap-3 group min-w-0">
         <img
-          src="crowend%20pics/SHE%20is%20crownd%20for%20purpose_.png"
+          src="site-media/SHE%20is%20crownd%20for%20purpose_.png"
           alt="Crowned for Purpose logo"
           class="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
         />
@@ -195,7 +195,7 @@
           onloadedmetadata="if (this.duration > 15) this.currentTime = 15"
           class="w-full h-full object-cover opacity-70 scale-105 transform filter blur-[0.5px]"
         >
-          <source src="crowend%20pics/crowned-main-page-video.mp4" type="video/mp4">
+          <source src="site-media/crowned-main-page-video.mp4" type="video/mp4">
         </video>
 
         <!-- Warm, gentle gradient overlay to soften video and maintain high typography contrast -->
@@ -373,7 +373,7 @@
               
               <div class="relative h-64 overflow-hidden">
                 <img 
-                  src="crowend%20pics/pad-a-girl/Roandpad%20dirve%20(3).JPG"
+                  src="site-media/Roandpad%20dirve%20(3).JPG"
                   alt="Crowned for Purpose volunteer bringing care packs to a school"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -410,7 +410,7 @@
               
               <div class="relative h-64 overflow-hidden">
                 <img 
-                  src="crowend%20pics/roll-on/Roandpad%20dirve%20(8).JPG"
+                  src="site-media/Roandpad%20dirve%20(8).JPG"
                   alt="Students gathered for a Roll-On Drive"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -445,7 +445,7 @@
               
               <div class="relative h-64 overflow-hidden">
                 <img 
-                  src="crowend%20pics/picnic/crowned%20picnic%20(3).JPG"
+                  src="site-media/crowned%20picnic%20(3).JPG"
                   alt="Girls and women gathered for a Crowned for Purpose picnic"
                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -514,7 +514,7 @@
               <div class="lg:col-span-5">
                 <div class="rounded-2xl overflow-hidden border border-brand-border shadow-sm">
                   <img 
-                    src="crowend%20pics/picnic/crowned%20picnic%20(3).JPG"
+                    src="site-media/crowned%20picnic%20(3).JPG"
                     alt="Friends gathering for a Crowned for Purpose picnic"
                     class="w-full h-64 object-cover"
                   />
@@ -775,7 +775,7 @@
     <div class="max-w-4xl mx-auto px-6 text-center">
       
       <img
-        src="crowend%20pics/SHE%20is%20crownd%20for%20purpose_.png"
+        src="site-media/SHE%20is%20crownd%20for%20purpose_.png"
         alt="Crowned for Purpose logo"
         class="w-20 h-20 object-contain mx-auto mb-4"
       />
@@ -812,18 +812,18 @@
         description: 'Providing sanitary pads and hygiene essentials directly to girls in underserved communities, supporting dignity and access to menstrual care.',
         impact: 'Outreach Impact: Hundreds of sanitary packs distributed across community schools.',
         images: [
-          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(3).JPG',
-          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(4).JPG',
-          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(6).JPG',
-          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(7).JPG',
-          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(9).JPG',
-          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(10).JPG',
-          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(11).JPG',
-          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(1).JPG',
-          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(2).JPG'
+          'site-media/Roandpad%20dirve%20(3).JPG',
+          'site-media/Roandpad%20dirve%20(4).JPG',
+          'site-media/Roandpad%20dirve%20(6).JPG',
+          'site-media/Roandpad%20dirve%20(7).JPG',
+          'site-media/Roandpad%20dirve%20(9).JPG',
+          'site-media/Roandpad%20dirve%20(10).JPG',
+          'site-media/Roandpad%20dirve%20(11).JPG',
+          'site-media/Roandpad%20dirve%20(1).JPG',
+          'site-media/Roandpad%20dirve%20(2).JPG'
         ],
         videos: [
-          { src: 'crowend%20pics/Pad%20a%20Girl%20Drive.mp4', label: 'Pad a Girl outreach video' }
+          { src: 'site-media/Pad%20a%20Girl%20Drive.mp4', label: 'Pad a Girl outreach video' }
         ]
       },
       'rollon-drive': {
@@ -832,13 +832,13 @@
         description: 'Personal hygiene is a cornerstone of daily self-worth and confidence. Our Roll-On Drive mobilised donations of deodorants, soaps, and body care items for girls and women across the local area.',
         impact: 'Outreach Impact: Comprehensive personal care packages provided to local youth centers.',
         images: [
-          'crowend%20pics/roll-on/Roandpad%20dirve%20(8).JPG'
+          'site-media/Roandpad%20dirve%20(8).JPG'
         ],
         videos: [
-          { src: 'crowend%20pics/roll-on/Roll-On%20Drive%201.mp4', label: 'Roll-On Drive video 1' },
-          { src: 'crowend%20pics/roll-on/Roll-On%20Drive%202.mp4', label: 'Roll-On Drive video 2' },
-          { src: 'crowend%20pics/roll-on/Roll-On%20Drive%203.mp4', label: 'Roll-On Drive video 3' },
-          { src: 'crowend%20pics/roll-on/IMG_4409.mp4', label: 'Roll-On Drive video 4' }
+          { src: 'site-media/Roll-On%20Drive%201.mp4', label: 'Roll-On Drive video 1' },
+          { src: 'site-media/Roll-On%20Drive%202.mp4', label: 'Roll-On Drive video 2' },
+          { src: 'site-media/Roll-On%20Drive%203.mp4', label: 'Roll-On Drive video 3' },
+          { src: 'site-media/IMG_4409.mp4', label: 'Roll-On Drive video 4' }
         ]
       },
       'soupkitchen-drive': {
@@ -847,12 +847,12 @@
         description: 'Girls gathered for a joyful picnic filled with fellowship, friendship, and Christ-centred encouragement. Through messages on identity, faith, and God-given purpose, the gathering created a welcoming space to connect and feel uplifted.',
         impact: 'Outreach Impact: Girls shared a joyful day of fellowship, faith-centred teaching, and encouragement.',
         images: [
-          'crowend%20pics/picnic/crowned%20picnic%20(3).JPG',
-          'crowend%20pics/picnic/crowned%20picnic%20(4).JPG',
-          'crowend%20pics/picnic/crowned%20picnic%20(5).JPG',
-          'crowend%20pics/picnic/crowned%20picnic%20(6).JPG',
-          'crowend%20pics/picnic/crowned%20picnic%20(1).JPG',
-          'crowend%20pics/picnic/crowned%20picnic%20(2).JPG'
+          'site-media/crowned%20picnic%20(3).JPG',
+          'site-media/crowned%20picnic%20(4).JPG',
+          'site-media/crowned%20picnic%20(5).JPG',
+          'site-media/crowned%20picnic%20(6).JPG',
+          'site-media/crowned%20picnic%20(1).JPG',
+          'site-media/crowned%20picnic%20(2).JPG'
         ]
       }
     };
