@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Crowned for Purpose | Her Identity. Her Healing. Her Purpose.</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              cream: '#FAF6F2',
+              surface: '#FFFFFF',
+              card: '#F6EFEB',
+              border: '#E8DED4',
+              rose: '#C98287',
+              roseDark: '#8C464D',
+              roseLight: '#F7EAEC',
+              gold: '#B68B4C',
+              espresso: '#231B1A',
+              muted: '#695854',
+              charcoal: '#312624'
+            }
+          },
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :where(main section[id], #current-initiative) {
+      scroll-margin-top: 5.5rem;
+    }
+
+    .glass-nav {
+      background: rgba(250, 246, 242, 0.88);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    
+    .fade-in-element {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    
+    .fade-in-element.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Stacked card gallery cue */
+    .gallery-stack {
+      position: relative;
+    }
+    .gallery-stack::before {
+      content: '';
+      position: absolute;
+      top: -6px;
+      right: 6px;
+      left: 6px;
+      height: 100%;
+      background: #EFE5DC;
+      border-radius: 1.5rem;
+      z-index: 0;
+      transform: rotate(1deg);
+      transition: transform 0.3s ease;
+    }
+    .gallery-stack:hover::before {
+      transform: rotate(2deg) translateY(-2px);
+    }
+
+    /* Modal Backdrop Transitions */
+    #galleryModal.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto !important;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .fade-in-element {
+        opacity: 1;
+        transform: none;
+        will-change: auto;
+      }
+    }
+  </style>
+</head>
+<body class="bg-brand-cream text-brand-espresso font-sans antialiased selection:bg-brand-roseLight selection:text-brand-roseDark">
+
+  <!-- ================= TOP ANNOUNCEMENT BAR ================= -->
+  <aside aria-label="Recent Community Outreach" class="bg-brand-roseDark text-white py-2 px-4 text-[10px] sm:text-xs tracking-wider uppercase text-center font-medium flex flex-col sm:flex-row items-center justify-center gap-x-2 gap-y-1 relative z-50">
+    <span>🌸 Recent Outreach: Picnic & Purpose Gathering</span>
+    <a href="#current-initiative" class="underline underline-offset-4 hover:text-brand-roseLight transition-colors">View Details &rarr;</a>
+  </aside>
+
+  <!-- ================= STICKY NAVBAR ================= -->
+  <header class="sticky top-0 z-40 glass-nav border-b border-brand-border/80 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="flex items-center gap-2 sm:gap-3 group min-w-0">
+        <img
+          src="crowend%20pics/SHE%20is%20crownd%20for%20purpose_.png"
+          alt="Crowned for Purpose logo"
+          class="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0 group-hover:scale-105 transition-transform duration-300"
+        />
+        <div>
+          <span class="font-serif text-lg sm:text-2xl font-bold tracking-tight text-brand-charcoal block leading-none whitespace-nowrap">Crowned for Purpose</span>
+          <span class="text-[8px] sm:text-[10px] tracking-widest text-brand-roseDark uppercase font-medium mt-1 block">Faith-Centred Foundation</span>
+        </div>
+      </a>
+
+      <!-- Desktop Links -->
+      <nav class="hidden lg:flex items-center gap-5 xl:gap-8 text-sm font-medium text-brand-muted">
+        <a href="#home" class="hover:text-brand-roseDark transition-colors">Home</a>
+        <a href="#who-we-are" class="hover:text-brand-roseDark transition-colors">Who We Are</a>
+        <a href="#our-drives" class="hover:text-brand-roseDark transition-colors">Our Drives</a>
+        <a href="#get-involved" class="hover:text-brand-roseDark transition-colors">Get Involved</a>
+        <a href="#contact" class="hover:text-brand-roseDark transition-colors">Contact</a>
+      </nav>
+
+      <!-- Primary CTA -->
+      <div class="hidden lg:flex items-center gap-4">
+        <a href="#donate" class="bg-brand-roseDark hover:bg-brand-roseDark/90 text-white px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 flex items-center gap-2">
+          <span>🤎</span>
+          Donate
+        </a>
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobileMenuBtn" class="lg:hidden text-brand-charcoal p-2 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-roseDark" aria-label="Toggle Menu" aria-controls="mobileMenu" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menuIcon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden bg-brand-cream border-b border-brand-border px-6 py-6 transition-all duration-300">
+      <div class="flex flex-col gap-4 text-base font-medium text-brand-charcoal">
+        <a href="#home" class="mobile-link py-1 hover:text-brand-roseDark">Home</a>
+        <a href="#who-we-are" class="mobile-link py-1 hover:text-brand-roseDark">Who We Are</a>
+        <a href="#our-drives" class="mobile-link py-1 hover:text-brand-roseDark">Our Drives</a>
+        <a href="#current-initiative" class="mobile-link py-1 hover:text-brand-roseDark">Recent Outreach</a>
+        <a href="#get-involved" class="mobile-link py-1 hover:text-brand-roseDark">Get Involved</a>
+        <a href="#contact" class="mobile-link py-1 hover:text-brand-roseDark">Contact Us</a>
+        <a href="#donate" class="mobile-link mt-2 text-center bg-brand-roseDark text-white py-3 rounded-full text-sm font-semibold">
+          Donate & Give
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= HERO SECTION (WITH FADED BACKGROUND VIDEO) ================= -->
+    <section id="home" class="relative min-h-[88vh] flex items-center justify-center overflow-hidden py-20 px-6">
+      
+      <!-- Background Video Layer -->
+      <div class="absolute inset-0 pointer-events-none overflow-hidden z-0">
+        <video
+          id="heroBackgroundVideo"
+          autoplay 
+          loop 
+          muted 
+          playsinline 
+          preload="metadata"
+          onloadedmetadata="if (this.duration > 15) this.currentTime = 15"
+          class="w-full h-full object-cover opacity-70 scale-105 transform filter blur-[0.5px]"
+        >
+          <source src="crowend%20pics/crowned-main-page-video.mp4" type="video/mp4">
+        </video>
+
+        <!-- Warm, gentle gradient overlay to soften video and maintain high typography contrast -->
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-cream/45 via-brand-cream/30 to-brand-cream/60"></div>
+      </div>
+
+      <!-- Main Hero Content -->
+      <div class="max-w-4xl mx-auto text-center relative z-10 fade-in-element">
+        <p class="text-xs uppercase font-semibold tracking-widest text-brand-roseDark mb-4">A Faith-Centred Community</p>
+        
+        <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight text-brand-charcoal mb-6 leading-tight">
+          Crowned for Purpose
+        </h1>
+
+        <p class="font-serif text-2xl sm:text-3xl text-brand-roseDark italic font-normal max-w-2xl mx-auto mb-6 leading-snug">
+          “Her Identity — Her Healing — Her Purpose.<br class="hidden sm:inline" /> A safe space to be heard, healed, and encouraged.”
+        </p>
+
+        <p class="text-base sm:text-lg text-brand-muted max-w-2xl mx-auto font-normal leading-relaxed mb-10">
+          Our heart is to serve with love, encourage healing, and inspire girls and women to know their worth and walk in their God-given destiny.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#donate" class="w-full sm:w-auto px-8 py-3.5 bg-brand-roseDark text-white rounded-full font-semibold text-sm tracking-wide shadow-sm hover:bg-brand-roseDark/90 transition-all">
+            Be Part of the Purpose 🤎
+          </a>
+          <a href="#our-drives" class="w-full sm:w-auto px-8 py-3.5 bg-white/90 backdrop-blur-sm border border-brand-border text-brand-charcoal rounded-full font-semibold text-sm tracking-wide hover:bg-brand-card transition-all">
+            Explore Our Drives
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHO WE ARE (Clean, Editorial, Authentic) ================= -->
+    <section id="who-we-are" class="py-24 bg-white border-t border-brand-border/70 relative z-10">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="mb-14 fade-in-element">
+          <span class="text-xs font-semibold uppercase tracking-widest text-brand-roseDark">About the Foundation</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-bold text-brand-charcoal mt-2">Who We Are</h2>
+        </div>
+
+        <!-- Editorial Two-Column Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-16 border-b border-brand-border/60 fade-in-element">
+          
+          <div class="lg:col-span-6 space-y-6 text-brand-charcoal leading-relaxed text-base sm:text-lg">
+            <p class="font-serif text-2xl sm:text-3xl text-brand-charcoal leading-snug font-normal">
+              Founded in <span class="font-semibold text-brand-roseDark">February 2026</span>, Crowned for Purpose was born from a genuine heart for people and a calling to see women and girls discover their identity in Christ.
+            </p>
+            <p class="text-brand-muted text-base leading-relaxed">
+              We believe every girl and woman deserves to be seen, valued, treated with dignity, and encouraged to embrace her God-given purpose. Through compassionate outreach, practical care drives, and Christ-centred fellowship, we actively meet practical needs while fostering spiritual growth.
+            </p>
+          </div>
+
+          <div class="lg:col-span-6 lg:border-l lg:border-brand-border/70 lg:pl-12 space-y-5">
+            <span class="text-xs font-semibold uppercase tracking-wider text-brand-muted">Founder's Testimony</span>
+            <h3 class="font-serif text-2xl font-bold text-brand-charcoal">The Story Behind the Crown</h3>
+            
+            <p class="text-brand-muted text-base leading-relaxed italic">
+              “Our founder’s journey of discovering identity in Christ, experiencing the Father’s restorative love, and recognising a longstanding heart for people is central to the birth of Crowned for Purpose. Her personal testimony reflects the journey that helped bring this vision to life.”
+            </p>
+
+            <div class="pt-2 flex items-center gap-3">
+              <div class="w-9 h-9 rounded-full bg-brand-roseLight border border-brand-rose/40 text-brand-roseDark flex items-center justify-center font-serif font-bold text-sm">
+                FR
+              </div>
+              <div>
+                <p class="text-sm font-semibold text-brand-charcoal">Faith Ramanyai</p>
+                <p class="text-xs text-brand-muted">Founder & Visionary</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Vision & Mission Statements -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 py-16 border-b border-brand-border/60 fade-in-element">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-widest text-brand-roseDark block mb-2">Our Vision</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-brand-charcoal mb-3">Rooted, Restored, Purpose-Driven</h3>
+            <p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+              To see girls and women rooted in their identity in Christ, walking in healing, living with dignity, and embracing their God-given purpose.
+            </p>
+          </div>
+
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-widest text-brand-gold block mb-2">Our Mission</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-bold text-brand-charcoal mb-3">Serving with Practical Dignity</h3>
+            <p class="text-brand-muted text-sm sm:text-base leading-relaxed">
+              To serve girls and women through compassionate outreach, practical support, and Christ-centred initiatives that encourage identity, healing, dignity, and purpose.
+            </p>
+          </div>
+        </div>
+
+        <!-- ================= CORE VALUES (ONLY EMOJIS, NO BOXES, EXPANSIVE ROW) ================= -->
+        <div class="pt-16 fade-in-element">
+          <div class="mb-10">
+            <span class="text-xs font-semibold uppercase tracking-widest text-brand-roseDark block mb-1">Guiding Principles</span>
+            <h3 class="font-serif text-3xl font-bold text-brand-charcoal">Our Core Values</h3>
+          </div>
+
+          <!-- 5 values cleanly aligned on the same row on desktop with emojis only -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
+            
+            <!-- Value 1 -->
+            <div class="space-y-3">
+              <span class="text-3xl block filter drop-shadow-sm select-none">✝️</span>
+              <h4 class="font-serif text-xl font-bold text-brand-charcoal">Christ-Centred Faith</h4>
+              <p class="text-sm text-brand-muted leading-relaxed">
+                Jesus Christ is at the heart of who we are and what we do.
+              </p>
+            </div>
+
+            <!-- Value 2 -->
+            <div class="space-y-3">
+              <span class="text-3xl block filter drop-shadow-sm select-none">🤍</span>
+              <h4 class="font-serif text-xl font-bold text-brand-charcoal">Compassion</h4>
+              <p class="text-sm text-brand-muted leading-relaxed">
+                We respond to the needs of others with love, patience, and understanding.
+              </p>
+            </div>
+
+            <!-- Value 3 -->
+            <div class="space-y-3">
+              <span class="text-3xl block filter drop-shadow-sm select-none">👑</span>
+              <h4 class="font-serif text-xl font-bold text-brand-charcoal">Dignity</h4>
+              <p class="text-sm text-brand-muted leading-relaxed">
+                Every person deserves respect, hygiene care, and thoughtful consideration.
+              </p>
+            </div>
+
+            <!-- Value 4 -->
+            <div class="space-y-3">
+              <span class="text-3xl block filter drop-shadow-sm select-none">🌿</span>
+              <h4 class="font-serif text-xl font-bold text-brand-charcoal">Healing</h4>
+              <p class="text-sm text-brand-muted leading-relaxed">
+                We encourage hope, restoration, and holistic personal and emotional growth.
+              </p>
+            </div>
+
+            <!-- Value 5 -->
+            <div class="space-y-3">
+              <span class="text-3xl block filter drop-shadow-sm select-none">✨</span>
+              <h4 class="font-serif text-xl font-bold text-brand-charcoal">Purpose</h4>
+              <p class="text-sm text-brand-muted leading-relaxed">
+                We inspire girls and women to recognise their God-given worth and potential.
+              </p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= OUR DRIVES (Gallery Stack & Image Fade) ================= -->
+    <section id="our-drives" class="py-24 bg-brand-cream border-t border-brand-border/70 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 fade-in-element">
+          <div>
+            <span class="text-xs font-semibold uppercase tracking-widest text-brand-roseDark">Impact in the Field</span>
+            <h2 class="font-serif text-4xl sm:text-5xl font-bold text-brand-charcoal mt-2">Our Drives</h2>
+          </div>
+          <p class="text-xs text-brand-muted uppercase tracking-wider mt-4 md:mt-0">
+            Click any drive to view the full photo gallery
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 fade-in-element">
+          
+          <!-- DRIVE 1: Pad a Girl Drives -->
+          <div class="gallery-stack cursor-pointer group" role="button" tabindex="0" aria-haspopup="dialog" onclick="openGallery('pad-drive')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('pad-drive')}">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden border border-brand-border shadow-sm group-hover:shadow-lg transition-all duration-300">
+              
+              <div class="relative h-64 overflow-hidden">
+                <img 
+                  src="crowend%20pics/pad-a-girl/Roandpad%20dirve%20(3).JPG"
+                  alt="Crowned for Purpose volunteer bringing care packs to a school"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                
+                <!-- Fade effect from picture into information -->
+                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
+
+                <!-- Gallery Hint Badge -->
+                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-brand-charcoal shadow-sm flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-brand-roseDark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>9 Photos + Video</span>
+                </div>
+              </div>
+
+              <div class="p-6 pt-2 relative z-10">
+                <h3 class="font-serif text-2xl font-bold text-brand-charcoal mb-2 group-hover:text-brand-roseDark transition-colors">
+                  Pad a Girl Drives
+                </h3>
+                <p class="text-sm text-brand-muted leading-relaxed line-clamp-2">
+                  Providing sanitary products directly to girls and championing menstrual dignity through community outreach.
+                </p>
+                <div class="mt-4 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs font-semibold text-brand-roseDark">
+                  <span>View Full Gallery</span>
+                  <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- DRIVE 2: Roll-On Drive -->
+          <div class="gallery-stack cursor-pointer group" role="button" tabindex="0" aria-haspopup="dialog" onclick="openGallery('rollon-drive')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('rollon-drive')}">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden border border-brand-border shadow-sm group-hover:shadow-lg transition-all duration-300">
+              
+              <div class="relative h-64 overflow-hidden">
+                <img 
+                  src="crowend%20pics/roll-on/Roandpad%20dirve%20(8).JPG"
+                  alt="Students gathered for a Roll-On Drive"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
+
+                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-brand-charcoal shadow-sm flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-brand-roseDark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>1 Photo + 4 Videos</span>
+                </div>
+              </div>
+
+              <div class="p-6 pt-2 relative z-10">
+                <h3 class="font-serif text-2xl font-bold text-brand-charcoal mb-2 group-hover:text-brand-roseDark transition-colors">
+                  Roll-On Drive
+                </h3>
+                <p class="text-sm text-brand-muted leading-relaxed line-clamp-2">
+                  Sharing roll-on products and personal care packs to support hygiene, confidence, and dignity.
+                </p>
+                <div class="mt-4 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs font-semibold text-brand-roseDark">
+                  <span>View Full Gallery</span>
+                  <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- DRIVE 3: Picnic & Purpose Gathering -->
+          <div class="gallery-stack cursor-pointer group" role="button" tabindex="0" aria-haspopup="dialog" onclick="openGallery('soupkitchen-drive')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openGallery('soupkitchen-drive')}">
+            <div class="relative z-10 bg-white rounded-3xl overflow-hidden border border-brand-border shadow-sm group-hover:shadow-lg transition-all duration-300">
+              
+              <div class="relative h-64 overflow-hidden">
+                <img 
+                  src="crowend%20pics/picnic/crowned%20picnic%20(3).JPG"
+                  alt="Girls and women gathered for a Crowned for Purpose picnic"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                
+                <div class="absolute inset-0 bg-gradient-to-t from-white via-white/40 to-transparent"></div>
+
+                <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-semibold text-brand-charcoal shadow-sm flex items-center gap-1.5">
+                  <svg class="w-3.5 h-3.5 text-brand-roseDark" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                  <span>6 Photos</span>
+                </div>
+              </div>
+
+              <div class="p-6 pt-2 relative z-10">
+                <h3 class="font-serif text-2xl font-bold text-brand-charcoal mb-2 group-hover:text-brand-roseDark transition-colors">
+                  Picnic & Purpose Gathering
+                </h3>
+                <p class="text-sm text-brand-muted leading-relaxed line-clamp-2">
+                  An uplifting picnic where girls gathered for fellowship, encouragement, and Christ-centred teaching on identity, faith, and God-given purpose.
+                </p>
+                <div class="mt-4 pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs font-semibold text-brand-roseDark">
+                  <span>View Full Gallery</span>
+                  <span class="group-hover:translate-x-1 transition-transform">&rarr;</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= ACTIVE CAMPAIGN SPOTLIGHT ================= -->
+        <div id="current-initiative" class="mt-20 fade-in-element">
+          <div class="bg-white rounded-3xl p-8 sm:p-12 border border-brand-border shadow-sm">
+            
+            <!-- Recent outreach indicator -->
+            <div class="flex items-center gap-2.5 mb-6">
+              <span class="inline-flex rounded-full h-2.5 w-2.5 bg-brand-roseDark"></span>
+              <span class="text-xs font-bold uppercase tracking-wider text-brand-roseDark">
+                Recent Community Outreach
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div class="lg:col-span-7">
+                <h3 class="font-serif text-3xl sm:text-4xl font-bold text-brand-charcoal mb-4">
+                  A Picnic of Fellowship, Faith & Purpose
+                </h3>
+                <p class="text-brand-charcoal text-base leading-relaxed mb-4">
+                  Our picnic brought girls together for a joyful day of friendship, fellowship, and Christ-centred encouragement. Through the gathering, we shared messages about identity, faith, and embracing their God-given purpose.
+                </p>
+                <p class="text-sm text-brand-muted leading-relaxed mb-8">
+                  We are grateful for every opportunity to create welcoming spaces where girls can connect, feel encouraged, and grow in confidence.
+                </p>
+
+                <div class="flex flex-wrap gap-4 items-center">
+                  <a href="#donate" class="px-6 py-3 bg-brand-roseDark hover:bg-brand-roseDark/90 text-white rounded-full text-sm font-semibold transition-all">
+                    Support Our Outreach &rarr;
+                  </a>
+                  <a href="#contact" class="px-6 py-3 bg-brand-cream border border-brand-border hover:bg-white text-brand-charcoal rounded-full text-sm font-semibold transition-all">
+                    Connect With Us
+                  </a>
+                </div>
+              </div>
+
+              <!-- Visual Representation -->
+              <div class="lg:col-span-5">
+                <div class="rounded-2xl overflow-hidden border border-brand-border shadow-sm">
+                  <img 
+                    src="crowend%20pics/picnic/crowned%20picnic%20(3).JPG"
+                    alt="Friends gathering for a Crowned for Purpose picnic"
+                    class="w-full h-64 object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= FLOATING GALLERY LIGHTBOX MODAL ================= -->
+    <div id="galleryModal" class="fixed inset-0 z-50 hidden bg-brand-espresso/80 backdrop-blur-md items-center justify-center p-3 sm:p-6 opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+      
+      <div class="bg-white rounded-3xl max-w-4xl w-full max-h-[92vh] flex flex-col overflow-hidden shadow-2xl relative">
+        
+        <div class="px-4 sm:px-6 py-4 border-b border-brand-border flex items-center justify-between gap-3 bg-brand-cream/40">
+          <div>
+            <span class="text-[11px] font-semibold uppercase tracking-widest text-brand-roseDark block" id="modalCategory">Drive Gallery</span>
+            <h3 class="font-serif text-2xl font-bold text-brand-charcoal" id="modalTitle">Drive Title</h3>
+          </div>
+          <button id="galleryCloseBtn" onclick="closeGallery()" class="w-10 h-10 flex-shrink-0 rounded-full bg-brand-cream hover:bg-brand-card flex items-center justify-center text-brand-charcoal text-lg font-bold transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-roseDark" aria-label="Close Gallery">
+            ✕
+          </button>
+        </div>
+
+        <div class="overflow-y-auto p-4 sm:p-6 space-y-6">
+          <div id="modalImagesGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+            <!-- Dynamically injected photos -->
+          </div>
+
+          <!-- Bottom Drive Information Block -->
+          <div class="p-6 bg-brand-cream rounded-2xl border border-brand-border">
+            <h4 class="font-serif text-xl font-bold text-brand-charcoal mb-2">About This Drive</h4>
+            <p id="modalDescription" class="text-sm text-brand-muted leading-relaxed"></p>
+            <div id="modalImpactBadge" class="mt-4 pt-3 border-t border-brand-border/60 text-xs font-semibold text-brand-roseDark"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ================= DONATE SECTION ================= -->
+    <section id="donate" class="py-24 bg-white border-t border-brand-border/70 relative">
+      <div class="max-w-4xl mx-auto px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14 fade-in-element">
+          <span class="text-xs font-semibold tracking-widest uppercase text-brand-roseDark block mb-1">Make An Impact</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-bold text-brand-charcoal mb-3">Be Part of the Purpose 🤎</h2>
+          <p class="text-base text-brand-muted leading-relaxed">
+            Your generosity helps turn compassion into action. Every contribution supports our mission to serve girls and women with dignity, care, and the love of Christ.
+          </p>
+        </div>
+
+        <!-- Banking Card with Instant Copy -->
+        <div class="max-w-xl mx-auto bg-brand-cream rounded-3xl p-8 sm:p-10 border border-brand-border shadow-sm fade-in-element">
+          
+          <div class="flex items-center justify-between border-b border-brand-border/70 pb-5 mb-5">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-brand-roseDark block">Direct Contribution</span>
+              <h3 class="font-serif text-2xl font-bold text-brand-charcoal">Our Banking Details</h3>
+            </div>
+            <span class="text-xs font-semibold uppercase tracking-wider text-brand-muted">Capitec</span>
+          </div>
+
+          <div class="space-y-4 text-sm">
+            <div class="flex justify-between items-center py-2 border-b border-brand-border/50">
+              <span class="text-brand-muted">Bank</span>
+              <span class="font-semibold text-brand-charcoal text-base">Capitec Bank</span>
+            </div>
+
+            <div class="flex justify-between items-center py-2 border-b border-brand-border/50">
+              <span class="text-brand-muted">Account Holder</span>
+              <span class="font-semibold text-brand-charcoal text-base">Faith Ramanyai</span>
+            </div>
+
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between py-3 gap-3">
+              <div>
+                <span class="text-brand-muted block text-xs">Account Number</span>
+                <span id="accountNumber" class="font-mono text-xl sm:text-2xl font-bold text-brand-charcoal tracking-wider">1393776122</span>
+              </div>
+
+              <button 
+                id="copyBtn" 
+                onclick="copyAccountNumber()" 
+                class="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full bg-brand-roseDark text-white text-xs font-semibold tracking-wide hover:bg-brand-roseDark/90 transition-all active:scale-95 shadow-sm"
+              >
+                <svg id="copyIcon" class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                </svg>
+                <span id="copyText">Copy Number</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="copyNotice" class="hidden mt-4 p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-xl text-center font-medium">
+            ✓ Account number copied to clipboard! Thank you for your support.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= GET INVOLVED SECTION ================= -->
+    <section id="get-involved" class="py-24 bg-brand-cream border-t border-brand-border/70 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 fade-in-element">
+          <span class="text-xs font-semibold tracking-widest uppercase text-brand-roseDark">Join the Hands & Feet</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-bold text-brand-charcoal mt-2 mb-4">Get Involved</h2>
+          <p class="text-brand-muted text-sm sm:text-base">Together, we can turn compassion into meaningful action.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto fade-in-element">
+          
+          <!-- Volunteer -->
+          <div class="p-8 sm:p-10 rounded-3xl bg-white border border-brand-border shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-brand-roseDark block mb-2">Hands-on Service</span>
+              <h3 class="font-serif text-2xl font-bold text-brand-charcoal mb-3">Volunteer</h3>
+              <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                Share your time, skills, and compassion in our outreach initiatives—from packing pads to serving warm meals.
+              </p>
+            </div>
+            <a href="#contact" class="text-sm font-semibold text-brand-roseDark hover:underline inline-flex items-center gap-1">
+              Join as a Volunteer &rarr;
+            </a>
+          </div>
+
+          <!-- Partner With Us -->
+          <div class="p-8 sm:p-10 rounded-3xl bg-white border border-brand-border shadow-sm flex flex-col justify-between">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-wider text-brand-gold block mb-2">Strategic Unity</span>
+              <h3 class="font-serif text-2xl font-bold text-brand-charcoal mb-3">Partner With Us</h3>
+              <p class="text-brand-muted text-sm leading-relaxed mb-6">
+                Join us as an individual, business, or organisation to help us extend our reach and serve more girls and women.
+              </p>
+            </div>
+            <a href="#contact" class="text-sm font-semibold text-brand-roseDark hover:underline inline-flex items-center gap-1">
+              Become an Outreach Partner &rarr;
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ================= CONTACT US (WITH DIRECT WHATSAPP ACTION) ================= -->
+    <section id="contact" class="py-24 bg-white border-t border-brand-border/70 relative">
+      <div class="max-w-6xl mx-auto px-6">
+        
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 fade-in-element">
+          
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span class="text-xs font-semibold tracking-widest uppercase text-brand-roseDark">Connect</span>
+              <h2 class="font-serif text-4xl font-bold text-brand-charcoal mt-2 mb-3">Connect With Us</h2>
+              <p class="text-brand-muted text-sm leading-relaxed">
+                We would love to hear from you. Whether you want to donate, volunteer, partner with us, or learn more about Crowned for Purpose, you are welcome to get in touch.
+              </p>
+            </div>
+
+            <!-- DIRECT WHATSAPP ACTION BUTTON -->
+            <div class="pt-2">
+              <a 
+                href="https://wa.me/27749103944?text=Hello%20Faith,%20I%20would%20like%20to%20connect%20with%20Crowned%20for%20Purpose!" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-full inline-flex items-center justify-center gap-3 px-6 py-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-sm shadow-sm hover:shadow transition-all group"
+              >
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                  <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                </svg>
+                <span>Message directly on WhatsApp</span>
+              </a>
+            </div>
+
+            <!-- Other channels -->
+            <div class="space-y-3 pt-2">
+              <div class="flex items-center gap-3 text-sm text-brand-charcoal">
+                <span class="w-8 h-8 rounded-full bg-brand-cream border border-brand-border flex items-center justify-center text-xs">📞</span>
+                <div>
+                  <span class="text-xs text-brand-muted block">Direct Line</span>
+                  <span class="font-semibold font-mono">074 910 3944</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 text-sm text-brand-charcoal">
+                <span class="w-8 h-8 rounded-full bg-brand-cream border border-brand-border flex items-center justify-center text-xs">✉️</span>
+                <div>
+                  <span class="text-xs text-brand-muted block">Email</span>
+                  <span class="font-semibold">To be added</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-3 text-sm text-brand-charcoal">
+                <span class="w-8 h-8 rounded-full bg-brand-cream border border-brand-border flex items-center justify-center text-xs">📱</span>
+                <div>
+                  <span class="text-xs text-brand-muted block">Social Media</span>
+                  <span class="font-semibold">To be added</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Message Form -->
+          <div class="lg:col-span-7 bg-brand-cream rounded-3xl p-8 border border-brand-border">
+            <h3 class="font-serif text-2xl font-bold text-brand-charcoal mb-4">Send a Note</h3>
+
+            <form id="contactForm" onsubmit="handleFormSubmit(event)" class="space-y-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="name" class="block text-xs font-semibold text-brand-charcoal uppercase mb-1">Your Name</label>
+                  <input id="name" type="text" required placeholder="Name" class="w-full px-4 py-3 rounded-xl bg-white border border-brand-border text-sm text-brand-charcoal focus:outline-none focus:border-brand-roseDark" />
+                </div>
+                <div>
+                  <label for="contact-info" class="block text-xs font-semibold text-brand-charcoal uppercase mb-1">Phone / WhatsApp</label>
+                  <input id="contact-info" type="text" placeholder="074..." class="w-full px-4 py-3 rounded-xl bg-white border border-brand-border text-sm text-brand-charcoal focus:outline-none focus:border-brand-roseDark" />
+                </div>
+              </div>
+
+              <div>
+                <label for="subject" class="block text-xs font-semibold text-brand-charcoal uppercase mb-1">Interest</label>
+                <select id="subject" class="w-full px-4 py-3 rounded-xl bg-white border border-brand-border text-sm text-brand-charcoal focus:outline-none focus:border-brand-roseDark">
+                  <option>Donating Sanitary Pads</option>
+                  <option>Volunteering</option>
+                  <option>Partnership</option>
+                  <option>General Inquiry</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="message" class="block text-xs font-semibold text-brand-charcoal uppercase mb-1">Message</label>
+                <textarea id="message" rows="4" required placeholder="How would you like to connect?" class="w-full px-4 py-3 rounded-xl bg-white border border-brand-border text-sm text-brand-charcoal focus:outline-none focus:border-brand-roseDark"></textarea>
+              </div>
+
+              <button type="submit" class="w-full py-3.5 bg-brand-charcoal hover:bg-brand-roseDark text-white rounded-xl text-sm font-semibold transition-colors">
+                Send Message
+              </button>
+
+              <div id="formSuccess" class="hidden p-3 bg-emerald-50 border border-emerald-200 text-emerald-800 text-xs rounded-xl text-center font-medium" role="status" aria-live="polite">
+                Thank you! Your note has been received.
+              </div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-brand-espresso text-brand-cream py-16 border-t border-brand-charcoal">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      
+      <img
+        src="crowend%20pics/SHE%20is%20crownd%20for%20purpose_.png"
+        alt="Crowned for Purpose logo"
+        class="w-20 h-20 object-contain mx-auto mb-4"
+      />
+
+      <h3 class="font-serif text-3xl font-bold tracking-tight text-white mb-2">Crowned for Purpose</h3>
+
+      <p class="font-serif text-xl sm:text-2xl text-brand-roseLight/90 italic font-normal max-w-xl mx-auto mb-8">
+        “You are seen. You are valued. You are Crowned for Purpose.”
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-brand-cream/70 uppercase tracking-widest mb-10">
+        <a href="#home" class="hover:text-white transition-colors">Home</a>
+        <a href="#who-we-are" class="hover:text-white transition-colors">Who We Are</a>
+        <a href="#our-drives" class="hover:text-white transition-colors">Our Drives</a>
+        <a href="#donate" class="hover:text-white transition-colors">Donate</a>
+        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      </div>
+
+      <p class="text-xs text-brand-cream/40 border-t border-white/10 pt-8">
+        &copy; 2026 Crowned for Purpose. Founded by Faith Ramanyai. All Rights Reserved.
+      </p>
+
+    </div>
+  </footer>
+
+  <!-- ================= JAVASCRIPT ================= -->
+  <script>
+    // Gallery Data Store
+    let galleryTrigger = null;
+    const drivesData = {
+      'pad-drive': {
+        category: 'Sanitary Health Initiative',
+        title: 'Pad a Girl Drives',
+        description: 'Providing sanitary pads and hygiene essentials directly to girls in underserved communities, supporting dignity and access to menstrual care.',
+        impact: 'Outreach Impact: Hundreds of sanitary packs distributed across community schools.',
+        images: [
+          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(3).JPG',
+          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(4).JPG',
+          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(6).JPG',
+          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(7).JPG',
+          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(9).JPG',
+          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(10).JPG',
+          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(11).JPG',
+          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(1).JPG',
+          'crowend%20pics/pad-a-girl/Roandpad%20dirve%20(2).JPG'
+        ],
+        videos: [
+          { src: 'crowend%20pics/Pad%20a%20Girl%20Drive.mp4', label: 'Pad a Girl outreach video' }
+        ]
+      },
+      'rollon-drive': {
+        category: 'Personal Care Initiative',
+        title: 'Roll-On Hygiene Drive',
+        description: 'Personal hygiene is a cornerstone of daily self-worth and confidence. Our Roll-On Drive mobilised donations of deodorants, soaps, and body care items for girls and women across the local area.',
+        impact: 'Outreach Impact: Comprehensive personal care packages provided to local youth centers.',
+        images: [
+          'crowend%20pics/roll-on/Roandpad%20dirve%20(8).JPG'
+        ],
+        videos: [
+          { src: 'crowend%20pics/roll-on/Roll-On%20Drive%201.mp4', label: 'Roll-On Drive video 1' },
+          { src: 'crowend%20pics/roll-on/Roll-On%20Drive%202.mp4', label: 'Roll-On Drive video 2' },
+          { src: 'crowend%20pics/roll-on/Roll-On%20Drive%203.mp4', label: 'Roll-On Drive video 3' },
+          { src: 'crowend%20pics/roll-on/IMG_4409.mp4', label: 'Roll-On Drive video 4' }
+        ]
+      },
+      'soupkitchen-drive': {
+        category: 'Community Fellowship',
+        title: 'Picnic & Purpose Gathering',
+        description: 'Girls gathered for a joyful picnic filled with fellowship, friendship, and Christ-centred encouragement. Through messages on identity, faith, and God-given purpose, the gathering created a welcoming space to connect and feel uplifted.',
+        impact: 'Outreach Impact: Girls shared a joyful day of fellowship, faith-centred teaching, and encouragement.',
+        images: [
+          'crowend%20pics/picnic/crowned%20picnic%20(3).JPG',
+          'crowend%20pics/picnic/crowned%20picnic%20(4).JPG',
+          'crowend%20pics/picnic/crowned%20picnic%20(5).JPG',
+          'crowend%20pics/picnic/crowned%20picnic%20(6).JPG',
+          'crowend%20pics/picnic/crowned%20picnic%20(1).JPG',
+          'crowend%20pics/picnic/crowned%20picnic%20(2).JPG'
+        ]
+      }
+    };
+
+    // Open Floating Gallery
+    function openGallery(driveKey) {
+      const drive = drivesData[driveKey];
+      if (!drive) return;
+
+      galleryTrigger = document.querySelector(`[onclick="openGallery('${driveKey}')"]`);
+      document.getElementById('modalCategory').textContent = drive.category;
+      document.getElementById('modalTitle').textContent = drive.title;
+      document.getElementById('modalDescription').textContent = drive.description;
+      document.getElementById('modalImpactBadge').textContent = drive.impact;
+
+      const grid = document.getElementById('modalImagesGrid');
+      grid.innerHTML = '';
+
+      drive.images.forEach((imgUrl, index) => {
+        const imgCard = document.createElement('div');
+        imgCard.className = 'rounded-2xl overflow-hidden h-48 bg-brand-card shadow-sm border border-brand-border';
+        imgCard.innerHTML = `<img src="${imgUrl}" alt="${drive.title} photo ${index + 1}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />`;
+        grid.appendChild(imgCard);
+      });
+
+      drive.videos?.forEach((video) => {
+        const videoCard = document.createElement('div');
+        videoCard.className = 'rounded-2xl overflow-hidden bg-brand-card shadow-sm border border-brand-border';
+        videoCard.innerHTML = `
+          <video controls playsinline preload="metadata" class="w-full aspect-video bg-brand-espresso">
+            <source src="${video.src}" type="video/mp4">
+            Your browser does not support video playback.
+          </video>
+          <p class="px-3 py-2 text-xs font-medium text-brand-charcoal">${video.label}</p>
+        `;
+        grid.appendChild(videoCard);
+      });
+
+      const modal = document.getElementById('galleryModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      setTimeout(() => {
+        modal.classList.remove('opacity-0');
+        document.getElementById('galleryCloseBtn').focus();
+      }, 10);
+
+      document.body.style.overflow = 'hidden';
+    }
+
+    // Close Floating Gallery
+    function closeGallery() {
+      const modal = document.getElementById('galleryModal');
+      modal.querySelectorAll('video').forEach(video => video.pause());
+      modal.classList.add('opacity-0');
+      setTimeout(() => {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+        galleryTrigger?.focus();
+        galleryTrigger = null;
+      }, 300);
+    }
+
+    // Close on backdrop click
+    document.getElementById('galleryModal').addEventListener('click', (e) => {
+      if (e.target.id === 'galleryModal') {
+        closeGallery();
+      }
+    });
+
+    // Mobile nav toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenuBtn.addEventListener('click', () => {
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      mobileMenuBtn.setAttribute('aria-expanded', String(!isExpanded));
+      mobileMenu.classList.toggle('hidden', isExpanded);
+    });
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Copy Account Number
+    async function copyAccountNumber() {
+      const num = "1393776122";
+      const copyText = document.getElementById("copyText");
+      const copyNotice = document.getElementById("copyNotice");
+      let copied = false;
+
+      const copyWithFallback = () => {
+        const input = document.createElement("textarea");
+        input.value = num;
+        input.setAttribute("readonly", "");
+        input.style.position = "fixed";
+        input.style.opacity = "0";
+        document.body.appendChild(input);
+        input.select();
+
+        try {
+          return document.execCommand("copy");
+        } catch {
+          return false;
+        } finally {
+          input.remove();
+        }
+      };
+
+      if (navigator.clipboard?.writeText) {
+        try {
+          await navigator.clipboard.writeText(num);
+          copied = true;
+        } catch {
+          copied = copyWithFallback();
+        }
+      } else {
+        copied = copyWithFallback();
+      }
+
+      copyText.textContent = copied ? "Copied!" : "Copy Failed";
+      copyNotice.classList.toggle("bg-emerald-50", copied);
+      copyNotice.classList.toggle("border-emerald-200", copied);
+      copyNotice.classList.toggle("text-emerald-800", copied);
+      copyNotice.classList.toggle("bg-rose-50", !copied);
+      copyNotice.classList.toggle("border-rose-200", !copied);
+      copyNotice.classList.toggle("text-brand-roseDark", !copied);
+      copyNotice.textContent = copied
+        ? "Account number copied to clipboard. Thank you for your support."
+        : "Unable to copy automatically. Please select and copy the account number.";
+      copyNotice.classList.remove("hidden");
+
+      setTimeout(() => {
+        copyText.textContent = "Copy Number";
+        copyNotice.classList.add("hidden");
+      }, 3500);
+    }
+
+    document.addEventListener('keydown', (event) => {
+      const galleryModal = document.getElementById('galleryModal');
+      const isGalleryOpen = !galleryModal.classList.contains('hidden');
+
+      if (event.key === 'Escape') {
+        if (isGalleryOpen) closeGallery();
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+          mobileMenuBtn.setAttribute('aria-expanded', 'false');
+          mobileMenuBtn.focus();
+        }
+      }
+
+      if (event.key === 'Tab' && isGalleryOpen) {
+        const focusableElements = galleryModal.querySelectorAll(
+          'button:not([disabled]), a[href], video[controls], [tabindex]:not([tabindex="-1"])'
+        );
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+          event.preventDefault();
+          lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+          event.preventDefault();
+          firstElement.focus();
+        }
+      }
+    });
+
+    // Form submit demo
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').classList.remove('hidden');
+      e.target.reset();
+      setTimeout(() => {
+        document.getElementById('formSuccess').classList.add('hidden');
+      }, 4000);
+    }
+
+    // Scroll fade in
+    document.addEventListener("DOMContentLoaded", () => {
+      const elements = document.querySelectorAll(".fade-in-element");
+      if (!("IntersectionObserver" in window)) {
+        elements.forEach(el => el.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      elements.forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
